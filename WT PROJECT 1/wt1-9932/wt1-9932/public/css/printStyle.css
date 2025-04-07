@@ -1,0 +1,81 @@
+@media print {
+    /* Ensure no background images or colors */
+    * {
+        background: transparent !important;
+        color: black !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    /* Remove unnecessary elements */
+    .navbar,
+    .menu-toggle, 
+    .robot-container,
+    a[href="#"],
+    script {
+        display: none !important;
+    }
+
+    /* Page setup */
+    @page {
+        margin: 1cm;
+        size: letter;
+    }
+
+    body {
+        font-family: 'Times New Roman', Times, serif;
+        line-height: 1.5;
+        font-size: 12pt;
+    }
+
+    /* Ensure text is black */
+    p, h1, h2, h3, div, span {
+        color: black !important;
+    }
+
+    /* Headings style */
+    h1 {
+        font-size: 18pt;
+        text-align: center;
+        border-bottom: 1pt solid black;
+        padding-bottom: 5pt;
+        margin-bottom: 10pt;
+    }
+
+    h2 {
+        font-size: 14pt;
+        margin-top: 10pt;
+        margin-bottom: 8pt;
+    }
+
+    /* Links */
+    a {
+        color: black !important;
+        text-decoration: underline;
+    }
+
+    /* Show actual URLs */
+    a[href]:after {
+        content: " (" attr(href) ") ";
+        font-size: 10pt;
+        text-decoration: none;
+    }
+
+    /* Iframes and media */
+    iframe, img {
+        max-width: 100% !important;
+        page-break-inside: avoid;
+    }
+
+    /* Section breaks */
+    section {
+        page-break-after: always;
+    }
+
+    /* Ensure crisp black and white output */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+}

@@ -1,0 +1,336 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Happy Monkey", serif;
+    font-weight: 400;
+    font-style: normal;
+    padding: 1.25rem;
+    margin: 1.25rem;
+    background-color: white;
+}
+
+header {
+    background: #E6BE8A;
+    color: black;
+    padding: 15px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.img {
+    border-radius: 2rem;
+    border: 0.3125rem solid black;
+    height: auto;
+    width: 100%;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-bottom: 0.625rem;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 0 0.625rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.125rem;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+    color: white;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.75rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* Media Queries for Responsive Navigation */
+@media (max-width: 48rem) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        padding: 1rem 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+section {
+    border-radius: 10px;
+    background-color: AntiqueWhite;
+    padding: 15px;
+    margin: 10px;
+}
+
+a {
+    display: block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: blue;
+}
+
+iframe {
+    width: 100%;
+    height: 500px;
+    border: none;
+}
+
+/* Responsive iframe sizes for smaller screens */
+@media screen and (max-width: 768px) {
+    iframe {
+        height: 400px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    iframe {
+        height: 300px;
+    }
+}
+
+table th, table td {
+    border: 0.0625rem solid white;
+    padding: 1rem;
+    text-align: left;
+}
+
+table th {
+    background-color: black;
+    color: aliceblue;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+h2 {
+    background-color: LightSteelBlue;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 10px;
+}
+
+.fade-box {
+    background-color: LightSteelBlue;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.fade-box:hover {
+    opacity: 1;
+}
+
+.robot-container {
+    display: flex;
+    animation: moveAcross 5s linear infinite;
+}
+
+.letter {
+    font-size: 100px;
+    font-weight: bold;
+    margin: 0 10px;
+    color: #2196F3;
+    opacity: 0;
+    animation: appear 0.5s forwards, letterAnimation 1.5s infinite alternate;
+}
+
+.letter:nth-child(1) { 
+    animation-delay: 0.2s;
+    animation-name: appear, rotateR;
+}
+
+.letter:nth-child(2) { 
+    animation-delay: 0.4s;
+    animation-name: appear, scaleO;
+}
+
+.letter:nth-child(3) { 
+    animation-delay: 0.6s;
+    animation-name: appear, bounceB;
+}
+
+.letter:nth-child(4) { 
+    animation-delay: 0.8s;
+    animation-name: appear, wobbleO;
+}
+
+.letter:nth-child(5) { 
+    animation-delay: 1s;
+    animation-name: appear, shakeTLetter;
+}
+
+@keyframes moveAcross {
+    0% { transform: translateX(-150%); }
+    100% { transform: translateX(150%); }
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: scale(0.5); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes rotateR {
+    from { transform: rotate(-15deg); }
+    to { transform: rotate(15deg); }
+}
+
+@keyframes scaleO {
+    from { transform: scale(0.8); }
+    to { transform: scale(1.2); }
+}
+
+@keyframes bounceB {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes wobbleO {
+    from { transform: rotate(-5deg); }
+    to { transform: rotate(5deg); }
+}
+
+@keyframes shakeTLetter {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.glitch-effect {
+    color: #3498db;
+}
+
+.glitch-effect:hover {
+    animation: glitch 0.5s infinite;
+}
+
+@keyframes glitch {
+    0% {
+        text-shadow: 2px 2px #ff6b6b, -2px -2px #4ecdc4;
+        transform: skew(-5deg);
+    }
+    25% {
+        text-shadow: -2px -2px #ff6b6b, 2px 2px #4ecdc4;
+        transform: skew(5deg);
+    }
+    50% {
+        text-shadow: 2px 2px #ff6b6b, -2px -2px #4ecdc4;
+        transform: skew(-3deg);
+    }
+    75% {
+        text-shadow: -2px -2px #ff6b6b, 2px 2px #4ecdc4;
+        transform: skew(3deg);
+    }
+    100% {
+        text-shadow: 2px 2px #ff6b6b, -2px -2px #4ecdc4;
+        transform: skew(-5deg);
+    }
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+/* Highlight required fields with a subtle background */
+input:required,
+textarea:required {
+    background-color: #fff9e6; /* light yellow */
+    border-left: 4px solid #ffcc00;
+}
+
+/* Optional fields */
+input:not(:required),
+textarea:not(:required) {
+    background-color: #f9f9f9;
+    border-left: 4px solid #ccc;
+}
+
+/* Valid input styles */
+input:valid,
+textarea:valid {
+    border: 2px solid #4CAF50; /* green border */
+    background-color: #f0fff0; /* light green background */
+}
+
+/* Invalid input styles */
+input:invalid,
+textarea:invalid {
+    border: 2px solid #f44336; /* red border */
+    background-color: #fff0f0; /* light red background */
+}
+
+/* Add some spacing for readability */
+form input,
+form textarea,
+form select {
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+form button {
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 8px;
+    border: none;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+}
+
+form button[type="reset"] {
+    background-color: #f44336; /* Red for reset */
+    color: white;
+}
+
+form button[type="submit"] {
+    background-color: #4CAF50; /* Green for submit */
+    color: white;
+}
+
+form button:hover {
+    background-color: #3e8e41; /* Darker green on hover */
+    transform: scale(1.05);
+}

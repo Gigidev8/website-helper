@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Future of AI</title>
+  <link rel="stylesheet" href="css/screenStyle.css" />
+  <link rel="stylesheet" href="css/printStyle.css" media="print" />
+  <script type="module" src="js/main.js"></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Dancing+Script:wght@400..700&family=Happy+Monkey&family=Noto+Sans+JP:wght@100..900&family=Orbitron:wght@400..900&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <header>
+    <h1>Future of Artificial Intelligence</h1>
+    
+    <!-- Navigation bar -->
+    <nav class="navbar">
+      <div id="menuTitle" class="menu-toggle">☰ Menu</div>
+      <ul id="menuIts" class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="article1.html">Healthcare</a></li>
+        <li><a href="article2.html">Education</a></li>
+        <li><a href="article3.html">Business</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main content -->
+  <section class="Content" id="index">
+    <h2 class="fade-box">HELLO</h2>
+    <p>I AM ANUSYA SENTHIL KUMAR</p>
+    <p>HERE ARE SOME INTERESTING FACTS ABOUT Artificial Intelligence. You will explore the impact of AI in different sectors as follows:</p>
+    <a href="#">Back to Top</a>
+  </section>
+
+  <!-- Robot word -->
+  <div class="robot-container">
+    <div class="letter">R</div>
+    <div class="letter">O</div>
+    <div class="letter">B</div>
+    <div class="letter">O</div>
+    <div class="letter">T</div>
+  </div>
+
+  <!-- Opinion form -->
+  <section id="visitor-opinion">
+    <h2>Share Your Opinion About the Future of AI</h2>
+    <form id="opnFrm">
+      <label for="nameElm">Your Name:</label>
+      <input type="text" id="nameElm" name="nameElm" required />
+
+      <label for="opnElm">Your Opinion:</label>
+      <textarea id="opnElm" name="opnElm" required></textarea>
+
+      <label for="willReturnElm">
+        <input type="checkbox" id="willReturnElm" name="willReturnElm" />
+        Will you return?
+      </label>
+
+      <button type="submit">Submit Opinion</button>
+      <button type="reset">Reset</button>
+    </form>
+
+    <!-- Container to display opinions -->
+    <div id="opinionsContainer"></div>
+  </section>
+</body>
+</html>
