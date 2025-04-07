@@ -334,3 +334,31 @@ form button:hover {
     background-color: #3e8e41; /* Darker green on hover */
     transform: scale(1.05);
 }
+/* Style for the opinion container */
+.opinion {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin: 10px 0;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+}
+
+/* Style for the delete button */
+.delete-btn {
+    background-color: #f44336;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+    background-color: #d32f2f;
+}
+
+.delete-btn:active {
+    background-color: #c62828;
+}

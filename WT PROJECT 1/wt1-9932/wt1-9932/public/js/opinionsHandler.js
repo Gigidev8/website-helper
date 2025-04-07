@@ -51,22 +51,42 @@ export default class OpinionsHandler {
         this.opinionsFrmElm.reset();
     }
 
-    opinion2html(opinion) {
+    opinion2html(opinion, index) {
         return `
             <div class="opinion">
                 <h3>${opinion.name}</h3>
                 <p><strong>Comment:</strong> ${opinion.comment}</p>
                 <p><strong>Will Return:</strong> ${opinion.willReturn ? "Yes" : "No"}</p>
                 <p><small>Submitted on: ${new Date(opinion.created).toLocaleString()}</small></p>
+                <button class="delete-btn" data-index="${index}">Delete</button>
             </div>
         `;
     }
 
     opinionArray2html(sourceData) {
-        return sourceData.map(opinion => this.opinion2html(opinion)).join('');
+        return sourceData.map((opinion, index) => this.opinion2html(opinion, index)).join('');
     }
 
     renderOpinions() {
         this.opinionsListElm.innerHTML = this.opinionArray2html(this.opinions);
+
+        // Add event listeners for delete buttons
+        const deleteBtns = this.opinionsListElm.querySelectorAll(".delete-btn");
+        deleteBtns.forEach(button => {
+            button.addEventListener("click", event => this.deleteOpinion(event));
+        });
+    }
+
+    deleteOpinion(event) {
+        const index = event.target.getAttribute("data-index");
+        
+        // Remove the opinion from the array
+        this.opinions.splice(index, 1);
+
+        // Update localStorage
+        localStorage.myTreesComments = JSON.stringify(this.opinions);
+
+        // Re-render the opinions
+        this.renderOpinions();
     }
 }
